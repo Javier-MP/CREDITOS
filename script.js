@@ -1,12 +1,12 @@
 const API_URL = "http://127.0.0.1:5000/creditos";
 
-// Función para cargar los créditos en la tabla
+
 async function cargarCreditos() {
     const response = await fetch(API_URL);
     const creditos = await response.json();
 
     let tabla = document.getElementById("tabla-creditos");
-    tabla.innerHTML = ""; // Limpiar la tabla antes de agregar datos
+    tabla.innerHTML = ""; 
 
     creditos.forEach((credito, index) => {
         let fila = `<tr>
@@ -20,7 +20,7 @@ async function cargarCreditos() {
     });
 }
 
-// Función para registrar un crédito
+
 document.getElementById("formulario").addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -46,7 +46,7 @@ document.getElementById("formulario").addEventListener("submit", async (event) =
 
     if (response.ok) {
         alert("Crédito registrado con éxito!");
-        cargarCreditos(); // Recargar la tabla
+        cargarCreditos(); 
     } else {
         alert("Error al registrar crédito.");
     }
@@ -54,5 +54,5 @@ document.getElementById("formulario").addEventListener("submit", async (event) =
     document.getElementById("formulario").reset();
 });
 
-// Cargar los créditos al iniciar la página
+
 window.onload = cargarCreditos;
