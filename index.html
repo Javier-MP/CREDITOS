@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Créditos</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Registro de Créditos</h2>
+    
+    <form id="formulario">
+        <label>Cliente: <input type="text" id="cliente" required></label><br>
+        <label>Monto: <input type="number" id="monto" required></label><br>
+        <label>Tasa de interés: <input type="number" id="tasa_interes"></label><br>
+        <label>Plazo (meses): <input type="number" id="plazo"></label><br>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <h2>Créditos Registrados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Cliente</th>
+                <th>Monto</th>
+                <th>Tasa de interés</th>
+                <th>Plazo</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-creditos"></tbody>
+    </table>
+</body>
+</html>
